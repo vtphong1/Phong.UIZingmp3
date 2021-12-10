@@ -1,0 +1,70 @@
+.toolbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background-color: #170f23;
+  font-size: 20px;
+}
+.toolbar-left,
+.toolbar-right {
+  display: flex;
+  align-items: center;
+}
+.tool-back,
+.tool-next {
+  height: 24px;
+  width: 44px;
+  justify-content: left;
+}
+.tool-theme,
+.tool-down,
+.tool-setup,
+.tool-acc {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(0, 0%, 100%, 0.1);
+}
+.tool-theme,
+.tool-down,
+.tool-setup {
+  margin-right: 10px;
+}
+
+.tool-icon {
+  display: flex;
+  align-items: center;
+}
+
+/* css for search tool */
+.tool-search {
+  padding-right: 10px;
+  padding-left: 10px;
+  height: 40px;
+  width: 460px;
+  border-radius: 20px;
+  background-color: hsla(0, 0%, 100%, 0.1);
+  display: flex;
+  align-items: center;
+}
+
+#search {
+  background-color: unset;
+  height: 100%;
+  width: 93%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 5px 0;
+  color: #eee;
+  font-size: 16px;
+  padding-left: 5px;
+}

@@ -1,0 +1,116 @@
+.playlist{
+height: 100vh;
+width: 330px;
+background-color: #130223;;
+color: white;
+position: absolute;
+top: 0;
+right: -330px;
+z-index: 4;
+}
+.playlist-header{
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.playlist-header .button-box{
+  padding: 2px;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: rgba($color: #fff, $alpha: 0.2);
+}
+.button-box button{
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: none;
+  outline: none;
+  color: white;
+}
+.button-current{
+  margin-left: 5px;
+}
+button.active{
+  background-color: rgba($color: #fff, $alpha: 0.3);
+}
+.disactve{
+  background: none;
+}
+.header-icon{
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: rgba($color: #fff, $alpha: 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mat-icon{
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.playlist-music{
+  height: calc(100vh - 70px);
+  width: 100%;
+}
+.playlist-music-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  width: 314px;
+  margin: auto;
+  padding: 0 10px;
+}
+.music-item-img{
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  position: relative;
+}
+.music-item-img mat-icon{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.music-item-img img{
+  height: 100%;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+.music-item-infor{
+  height: auto;
+  flex-grow: 1;
+}
+.music-name{
+  font-size: 16px;
+  font-weight: bold;
+  opacity: .8;
+}
+.music-singer{
+  opacity: .6;
+}
+.music-item-interact{
+  display: none;
+}
+.playlist-music-item:hover .music-item-interact{
+  display: block;
+  display: flex;
+}
+.playlist-music-item:hover{
+  background-color: rgba($color: #fff, $alpha: 0.2);
+  border-radius: 5px;
+}
+.playlist-music-item:hover .music-item-img mat-icon{
+  display: block
+}
+.music-item-interact mat-icon{
+  margin-right: 10px;
+}

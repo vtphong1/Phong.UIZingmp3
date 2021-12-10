@@ -1,0 +1,107 @@
+<div class="content">
+  <h3 class="title-content">Lựa chọn hôm nay</h3>
+  <div class="music">
+    <div class="music-item">
+      <div
+        class="music-item-img"
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+      >
+        <div
+          class="music-item-model"
+          [ngStyle]="playMusic == true
+              ? {
+                  'display':'flex','justify-content':'space-around', 'align-items':'center'
+                }
+              : {}">
+          <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
+          <div class="model-icon" (click)="showPlay($event)">
+            <mat-icon *ngIf="!playMusic">play_arrow</mat-icon>
+            <div *ngIf="playMusic" class="effects">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+          </div>
+          <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
+        </div>
+        <img src="assets/img/img1.webp" alt="" />
+      </div>
+      <h4>Accoustic V-Pop</h4>
+      <p>Rót mật vào tai cùng những thanh âm Acoustic nhẹ nhàng</p>
+    </div>
+    <div class="music-item">
+      <div
+        class="music-item-img"
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="music-item-model">
+          <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
+          <div class="model-icon" (click)="showPlay($event)">
+            <mat-icon>play_arrow</mat-icon>
+          </div>
+          <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
+        </div>
+        <img src="assets/img/img2.webp" alt="" />
+      </div>
+      <h4>Justin Bieber's</h4>
+      <p>Âm nhạc của Justin Biber là cảm hứng cho ...</p>
+    </div>
+    <div class="music-item">
+      <div
+        class="music-item-img"
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="music-item-model">
+          <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
+          <div class="model-icon" (click)="showPlay($event)">
+            <mat-icon>play_arrow</mat-icon>
+          </div>
+          <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
+        </div>
+        <img src="assets/img/img3.webp" alt="" />
+      </div>
+      <h4>Đóa hồng nhạc việt</h4>
+      <p>Những đóa hồng tỏa sắc hương trong khu vườn</p>
+    </div>
+    <div class="music-item">
+      <div
+        class="music-item-img"
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="music-item-model">
+          <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
+          <div class="model-icon" (click)="showPlay($event)">
+            <mat-icon>play_arrow</mat-icon>
+          </div>
+          <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
+        </div>
+        <img src="assets/img/img4.webp" alt="" />
+      </div>
+      <h4>Anime Now</h4>
+      <p>Nhạc Anime hot nhất ở thời điểm hiện tại có ...</p>
+    </div>
+    <div class="music-item">
+      <div
+        class="music-item-img"
+        [routerLink]="['/detail']"
+        routerLinkActive="router-link-active"
+      >
+        <div class="music-item-model">
+          <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
+          <div class="model-icon" (click)="showPlay($event)">
+            <mat-icon>play_arrow</mat-icon>
+          </div>
+          <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
+        </div>
+        <img src="assets/img/img5.webp" alt="" />
+      </div>
+      <h4>Daily XONE's Picks</h4>
+      <p>Tuyển chọn đặc biệt mỗi ngày bởi XONE ...</p>
+    </div>
+  </div>
+</div>

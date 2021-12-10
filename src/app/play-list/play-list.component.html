@@ -1,0 +1,67 @@
+<div class="playlist" [ngStyle]="showPlaylist ? {'right': '0', 'transition': '2s'} : {'right':'-330px','transition':'1s'}">
+  <div class="playlist-header">
+    <div class="button-box">
+      <button class="button-list" [ngClass]="step === 'step1' ? 'active' : 'disactve'" (click)="step='step1'">Danh sách phát</button>
+      <button class="button-current" [ngClass]="step === 'step2' ? 'active' : 'disactve'" (click)="step='step2'">Nghe gần đây</button>
+    </div>
+    <div class="header-icon"><mat-icon>alarm_on</mat-icon></div>
+    <div class="header-icon"><mat-icon>more_horiz</mat-icon></div>
+  </div>
+  <div class="playlist-music">
+    <div class="playlist-music-item">
+      <div class="music-item-img">
+        <img src="/../assets/img/anh2.jpg" alt="">
+        <mat-icon>play_arrow</mat-icon>
+      </div>
+      <div class="music-item-infor">
+        <div class="music-name">Cưa là đổ</div>
+        <div class="music-singer">Phát hồ, X2X</div>
+      </div>
+      <div class="music-item-interact">
+        <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
+      </div>
+    </div>
+
+    <div class="playlist-music-item">
+      <div class="music-item-img">
+        <img src="/../assets/img/anh4.jpg" alt="">
+        <mat-icon>play_arrow</mat-icon>
+      </div>
+      <div class="music-item-infor">
+        <div class="music-name">Cưa là đổ</div>
+        <div class="music-singer">Phát hồ, X2X</div>
+      </div>
+      <div class="music-item-interact">
+        <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
+      </div>
+    </div>
+
+    <div class="playlist-music-item">
+      <div class="music-item-img">
+        <img src="/../assets/img/anh3.jpg" alt="">
+        <mat-icon>play_arrow</mat-icon>
+      </div>
+      <div class="music-item-infor">
+        <div class="music-name">Cưa là đổ</div>
+        <div class="music-singer">Phát hồ, X2X</div>
+      </div>
+      <div class="music-item-interact">
+        <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
+      </div>
+    </div>
+
+    <div class="playlist-music-item">
+      <div class="music-item-img">
+        <img src="/../assets/img/anh2.jpg" alt="">
+        <mat-icon>play_arrow</mat-icon>
+      </div>
+      <div class="music-item-infor">
+        <div class="music-name">Cưa là đổ</div>
+        <div class="music-singer">Phát hồ, X2X</div>
+      </div>
+      <div class="music-item-interact">
+        <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

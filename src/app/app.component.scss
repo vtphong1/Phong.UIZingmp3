@@ -1,0 +1,15 @@
+.zmp3-app{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-color: #170f23;
+    color: white;
+}
+.zmp3-content {
+  width: calc(100% - 240px);
+  overflow-y: scroll;
+}
+
+
+
+

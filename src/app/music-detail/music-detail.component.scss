@@ -1,0 +1,134 @@
+.detail-music{
+  height: calc(100vh - 70px);
+  width: 100%;
+  display: flex;
+  padding: 40px 40px 40px 0;
+}
+//css for nội dung bên trái
+.detail-music-left{
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+}
+//css for nội dung chứa img
+.detail-music-left .music-header{
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  background-image: url('../../assets/img/detail.webp');
+}
+//css for nội dung phần giới thiệu
+.music-content .content-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.content-top .title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.content-top .realse, .content-top .like{
+  opacity: .8;
+}
+
+.actions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.actions .btnPlay{
+  width: 174px;
+  height: 37px;
+  border-radius: 20px;
+  border: none;
+  background-color: #7200A1;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.level{
+  display: flex;
+  color: white;
+  width: 100px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.level .level-icon{
+  height: 40px;
+  width: 40px;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+//css for phần nội dung bên phải
+.detail-music-right{
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.music-lyrics{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-size: 42px;
+  text-align: left;
+}
+.music-lyrics:hover{
+  overflow: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+//css for thanh điều chỉnh nhạc
+.play-control{
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.play-control .music-control{
+  display: flex;
+  align-items: center;
+}
+.music-slide{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.music-slide input{
+  width: 400px;
+}
+.music-control .control-icon{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.music-control .control-icon:hover{
+  background-color: rgba($color: #000000, $alpha: 0.2);
+}
+.music-control .control-icon:not(:last-child){
+  margin-right: 10px;
+}
+.music-control .control-icon:nth-child(3){
+  height: 45px;
+  width: 45px;
+}
+.music-control .control-icon:nth-child(3):hover{
+  color: #7200A1;
+  border: 1px solid #7200A1;
+}

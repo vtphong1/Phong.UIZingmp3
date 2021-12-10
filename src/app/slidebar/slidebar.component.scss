@@ -1,0 +1,38 @@
+.slidebar {
+  height: auto;
+  width: 100%;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.slidebar img {
+  width: 320px;
+  height: 180px;
+  border-radius: 10px;
+  transition: 1s ease-in-out;
+}
+
+.previous-img,
+.next-img {
+  height: 50px;
+  width: 50px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  color: #fff;
+  background-color: hsla(0,0%,100%,.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.previous-img {
+  top: 90px;
+  left: 60px
+}
+.next-img {
+  top: 90px;
+  right: 60px;
+}
