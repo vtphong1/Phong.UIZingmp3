@@ -1,4 +1,5 @@
 import { Component, DoCheck, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { ActionMusicService } from './Services/action-music.service';
 import { ShowCompnentService } from './Services/show-compnent.service';
 
 @Component({
@@ -7,14 +8,16 @@ import { ShowCompnentService } from './Services/show-compnent.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, DoCheck {
-  disHeight:any;
+  disHeight: any;
   showPlayCurrent: boolean | undefined;
-  constructor(private showComponent: ShowCompnentService) {}
+  constructor(
+    private actionMusic: ActionMusicService
+  ) {}
   ngDoCheck(): void {
     // throw new Error('Method not implemented.');
-    this.showPlayCurrent = this.showComponent.showPlayCurrent;
-    if(this.showComponent.showPlayCurrent==true){
-      this.disHeight="90";
+    this.showPlayCurrent = this.actionMusic._showPlayCurrent;
+    if (this.actionMusic._showPlayCurrent == true) {
+      this.disHeight = '90';
     }
   }
 

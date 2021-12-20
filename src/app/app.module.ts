@@ -16,6 +16,9 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { MusicDetailComponent } from './music-detail/music-detail.component';
 import { HomeComponent } from './home/home.component';
 import { PlayListComponent } from './play-list/play-list.component';
+import { HttpClientModule } from '@angular/common/http';
+import { Chartmp3Component } from './chartmp3/chartmp3.component';
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -29,6 +32,7 @@ import { PlayListComponent } from './play-list/play-list.component';
     MusicDetailComponent,
     HomeComponent,
     PlayListComponent,
+    Chartmp3Component,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,8 @@ import { PlayListComponent } from './play-list/play-list.component';
     MatIconModule,
     NgImageSliderModule,
     IvyCarouselModule,
+    HttpClientModule,
+    HighchartsChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

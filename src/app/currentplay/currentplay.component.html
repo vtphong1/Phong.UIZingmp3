@@ -2,34 +2,74 @@
   <div class="play-control-left">
     <div class="media">
       <div class="media-left">
-        <img [ngStyle]="{'animation-play-state':animate}" src="assets/img/media.webp" alt="">
+        <img
+          [ngStyle]="{ 'animation-play-state': animate }"
+          [src]="currentMusic.image"
+          alt=""
+        />
       </div>
       <div class="media-center">
-        <div class="media-music-name"><b>Vì em có anh</b></div>
-        <div class="media-music-singer">Hoàng yến chi pi</div>
+        <div class="media-music-name"><b>{{currentMusic.name}}</b></div>
+        <div class="media-music-singer">{{currentMusic.singer}}</div>
       </div>
-      <div class="media-right"><mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon></div>
+      <div class="media-right">
+        <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
+      </div>
     </div>
   </div>
   <div class="play-control-center">
     <div class="action">
-      <button class="action-icon">	<mat-icon>shuffle</mat-icon></button>
-      <button class="action-icon">	<mat-icon>skip_previous</mat-icon></button>
-      <button class="action-icon" (click)="changeIcon($event)"><mat-icon *ngIf="playMusic">play_arrow</mat-icon><mat-icon *ngIf="!playMusic">pause</mat-icon></button>
+      <button class="action-icon"><mat-icon>shuffle</mat-icon></button>
+      <button class="action-icon"><mat-icon>skip_previous</mat-icon></button>
+      <button class="action-icon" (click)="changeIcon()">
+        <mat-icon *ngIf="!playMusic">play_arrow</mat-icon
+        ><mat-icon *ngIf="playMusic">pause</mat-icon>
+      </button>
       <button class="action-icon"><mat-icon>skip_next</mat-icon></button>
       <button class="action-icon"><mat-icon>repeat</mat-icon></button>
     </div>
     <div class="action-level">
-      00:00&nbsp;<input type="range" style="width: 400px" min="0" max="100" step="1" value="0" class="ranger">&nbsp;02:45
+      <audio #audio (timeupdate)="onTimeupdate($event)" autoplay>
+        <source [src]="currentMusic.path" type="audio/ogg"/>
+      </audio>
+      <p class="timeCurrent">{{!currentTime?"00:00":currentTime | date :'mm:ss'}}</p>
+      &nbsp;<input
+        type="range"
+        style="width: 400px"
+        min="0"
+        max="100"
+        step="1"
+        [value]="progressPercent"
+        class="ranger"
+        (change)="seekTime($event)"
+        #progress
+      />&nbsp;
+      <!-- <p class="timeDuration">{{durationTime| date :'mm:ss' }}</p> -->
+      <p class="timeDuration">{{!durationTime?"00:00":durationTime| date:'mm:ss'}}</p>
     </div>
   </div>
   <div class="play-control-right">
     <button class="action-icon"><mat-icon> local_movies </mat-icon></button>
-      <button class="action-icon">	<mat-icon>headset_mic</mat-icon></button>
-      <button class="action-icon"><mat-icon>view_compact</mat-icon> </button>
-      <button class="action-icon"><mat-icon>volume_up</mat-icon></button>
-      <input type="range" name="" id="" class="ranger" min="0" max="100" step="1" value="50">
-      <button class="action-icon" (click)="showPlayList()" [ngStyle]="styleOne ?{'background': '#7200a1'} : {'background-color': ''}"><mat-icon>audiotrack</mat-icon></button>
-
+    <button class="action-icon"><mat-icon>headset_mic</mat-icon></button>
+    <button class="action-icon"><mat-icon>view_compact</mat-icon></button>
+    <button class="action-icon"><mat-icon>volume_up</mat-icon></button>
+    <input
+      type="range"
+      class="ranger"
+      min="0"
+      max="100"
+      step="1"
+      value="0"
+      (change)="seekVolum($event)"
+    />
+    <button
+      class="action-icon"
+      (click)="showPlayList()"
+      [ngStyle]="
+        styleOne ? { background: '#7200a1' } : { 'background-color': '' }
+      "
+    >
+      <mat-icon>audiotrack</mat-icon>
+    </button>
   </div>
 </div>

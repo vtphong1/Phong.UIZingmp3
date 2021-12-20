@@ -22,4 +22,20 @@ body{
   border-radius: 5px;
 }
 
+path.highcharts-grid-line, path.highcharts-axis-line{
+    stroke-dasharray: 2;
+    opacity: 0.4;
+}
+path.highcharts-tick{
+  display: none;
+}
+text:nth-child(even){
+  display: none;
+}
+// rect.highcharts-background{
+//   fill: #c662ef;
+// }
+// path.highcharts-graph{
+//   stroke: red;
+// }
 

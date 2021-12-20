@@ -1,28 +1,84 @@
-<div class="playlist" [ngStyle]="showPlaylist ? {'right': '0', 'transition': '2s'} : {'right':'-330px','transition':'1s'}">
+<div
+  class="playlist"
+  [ngStyle]="
+    showPlaylist
+      ? { right: '0', transition: '2s' }
+      : { right: '-330px', transition: '1s' }
+  "
+>
   <div class="playlist-header">
     <div class="button-box">
-      <button class="button-list" [ngClass]="step === 'step1' ? 'active' : 'disactve'" (click)="step='step1'">Danh sách phát</button>
-      <button class="button-current" [ngClass]="step === 'step2' ? 'active' : 'disactve'" (click)="step='step2'">Nghe gần đây</button>
+      <button
+        class="button-list"
+        [ngClass]="step === 'step1' ? 'active' : 'disactve'"
+        (click)="step = 'step1'"
+      >
+        Danh sách phát
+      </button>
+      <button
+        class="button-current"
+        [ngClass]="step === 'step2' ? 'active' : 'disactve'"
+        (click)="step = 'step2'"
+      >
+        Nghe gần đây
+      </button>
     </div>
     <div class="header-icon"><mat-icon>alarm_on</mat-icon></div>
     <div class="header-icon"><mat-icon>more_horiz</mat-icon></div>
   </div>
   <div class="playlist-music">
-    <div class="playlist-music-item">
-      <div class="music-item-img">
-        <img src="/../assets/img/anh2.jpg" alt="">
-        <mat-icon>play_arrow</mat-icon>
+    <div
+      class="playlist-music-item"
+      *ngFor="let item of listMusic"
+      [ngStyle]="
+        (playMusic && currentId == item.id) || currentId == item.id
+          ? {
+              'background-color': 'rgb(114,0,161)',
+              'border-radius': '5px'
+            }
+          : {}
+      "
+    >
+      <div class="music-item-img" (click)="changeMusic(item,$event)" [attr.data-id]="item.id">
+        <img [src]="item.image" alt=""  [attr.data-id]="item.id"/>
+        <mat-icon
+        [ngStyle]="
+        (!playMusic && currentId == item.id)
+          ? {
+              'display': 'block'
+            }
+          : {}
+      "
+          [attr.data-id]="item.id"
+          *ngIf="!playMusic"
+          >play_arrow</mat-icon
+        >
+        <div
+          *ngIf="playMusic && currentId == item.id; else elseBlock"
+          class="effects"
+          [attr.data-id]="item.id"
+        >
+          <div class="item" [attr.data-id]="item.id"></div>
+          <div class="item" [attr.data-id]="item.id"></div>
+          <div class="item" [attr.data-id]="item.id"></div>
+          <div class="item" [attr.data-id]="item.id"></div>
+        </div>
+        <ng-template #elseBlock
+          ><mat-icon *ngIf="playMusic" [attr.data-id]="item.id"
+            >play_arrow</mat-icon
+          ></ng-template
+        >
       </div>
       <div class="music-item-infor">
-        <div class="music-name">Cưa là đổ</div>
-        <div class="music-singer">Phát hồ, X2X</div>
+        <div class="music-name">{{ item.name }}</div>
+        <div class="music-singer">{{ item.singer }}</div>
       </div>
       <div class="music-item-interact">
         <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
       </div>
     </div>
 
-    <div class="playlist-music-item">
+    <!-- <div class="playlist-music-item">
       <div class="music-item-img">
         <img src="/../assets/img/anh4.jpg" alt="">
         <mat-icon>play_arrow</mat-icon>
@@ -62,6 +118,6 @@
       <div class="music-item-interact">
         <mat-icon>thumb_up_alt</mat-icon><mat-icon>more_horiz</mat-icon>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>

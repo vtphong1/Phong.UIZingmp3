@@ -1,7 +1,7 @@
 <div class="content">
   <h3 class="title-content">Lựa chọn hôm nay</h3>
   <div class="music">
-    <div class="music-item">
+    <div class="music-item" *ngFor="let item of songs; let index = index">
       <div
         class="music-item-img"
         [routerLink]="['/detail']"
@@ -9,29 +9,46 @@
       >
         <div
           class="music-item-model"
-          [ngStyle]="playMusic == true
+          [ngStyle]="
+            playMusic == true && currentId == item.id
               ? {
-                  'display':'flex','justify-content':'space-around', 'align-items':'center'
+                  display: 'flex',
+                  'justify-content': 'space-around',
+                  'align-items': 'center'
                 }
-              : {}">
+              : {}
+          "
+        >
           <div class="model-icon"><mat-icon>thumb_up_alt</mat-icon></div>
-          <div class="model-icon" (click)="showPlay($event)">
-            <mat-icon *ngIf="!playMusic">play_arrow</mat-icon>
-            <div *ngIf="playMusic" class="effects">
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
-              <div class="item"></div>
+          <div class="model-icon" (click)="getMusic(item, $event)" [attr.data-id]="item.id">
+            <mat-icon *ngIf="!playMusic" [attr.data-id]="item.id"
+              >play_arrow</mat-icon
+            >
+            <div
+              *ngIf="playMusic && currentId == item.id; else elseBlock"
+              class="effects"
+              [attr.data-id]="item.id"
+            >
+              <div class="item" [attr.data-id]="item.id"></div>
+              <div class="item" [attr.data-id]="item.id"></div>
+              <div class="item" [attr.data-id]="item.id"></div>
+              <div class="item" [attr.data-id]="item.id"></div>
             </div>
+            <ng-template #elseBlock
+              ><mat-icon *ngIf="playMusic" [attr.data-id]="item.id"
+                >play_arrow</mat-icon
+              ></ng-template
+            >
           </div>
           <div class="model-icon"><mat-icon>more_horiz</mat-icon></div>
         </div>
-        <img src="assets/img/img1.webp" alt="" />
+        <!-- <img src="assets/img/img1.webp" alt="" /> -->
+        <img [src]="item.image" alt="" />
       </div>
       <h4>Accoustic V-Pop</h4>
       <p>Rót mật vào tai cùng những thanh âm Acoustic nhẹ nhàng</p>
     </div>
-    <div class="music-item">
+    <!-- <div class="music-item">
       <div
         class="music-item-img"
         [routerLink]="['/detail']"
@@ -102,6 +119,6 @@
       </div>
       <h4>Daily XONE's Picks</h4>
       <p>Tuyển chọn đặc biệt mỗi ngày bởi XONE ...</p>
-    </div>
+    </div> -->
   </div>
 </div>
