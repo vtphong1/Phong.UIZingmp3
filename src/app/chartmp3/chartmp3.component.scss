@@ -1,11 +1,31 @@
-.chartmp3 {
+.chartmp3{
+  height: 400px;
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+.chartmp3-blur {
+  background: url("https://zjs.zadn.vn/zmp3-desktop/releases/v1.4.17/static/media/bg-chart.fd766403.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   height: 400px;
   width: auto;
-  background-color: #c662ef;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+}
+.chartmp3-chart {
+  height: 400px;
+  width: auto;
+  background-image: linear-gradient(180deg, #740091, #2d1a4c);
   color: white;
   border-radius: 10px;
-  margin-left: 40px;
-  margin-right: 40px;
+  position: absolute;
+  top: 0;
+  left: 40px;
+  right: 40px;
+  opacity: 0.9;
 }
 .chartmp3-title {
   height: 60px;
@@ -29,13 +49,13 @@
 .chartmp3-item {
   height: 80px;
   width: 100%;
-  background-color: rgba($color: #000000, $alpha: 0.2);
+  background-color: rgba($color: #ffff, $alpha: 0.1);
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 10px;
 }
-.chartmp3-item:not(:first-child){
+.chartmp3-item:not(:first-child) {
   margin-top: 10px;
 }
 .media-left {
@@ -45,20 +65,20 @@
   justify-content: center;
   align-items: center;
 }
-.media-img{
+.media-img {
   position: relative;
 }
-.media-img mat-icon{
+.media-img mat-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: none;
 }
-.chartmp3-item:hover{
-  background-color: rgba($color: #ffff, $alpha: 0.4);
+.chartmp3-item:hover {
+  background-color: rgba($color: #ffff, $alpha: 0.2);
 }
-.chartmp3-item:hover mat-icon{
+.chartmp3-item:hover mat-icon {
   display: block;
 }
 .media-img,

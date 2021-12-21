@@ -14,7 +14,8 @@ export class Chartmp3Component implements OnInit {
     this.chartOptions = {
       chart: {
         type: 'spline',
-        backgroundColor: '#c662ef',
+        backgroundColor:'none',
+        plotBackgroundImage: 'linear-gradient(180deg,#740091,#2d1a4c);',
       },
       title: {
         text: '',
@@ -25,6 +26,25 @@ export class Chartmp3Component implements OnInit {
       },
       plotOptions: {
         series: {
+          marker: {
+            enabled: false,
+          },
+          events: {
+            mouseOver: function (e: any) {
+              e.target.update({
+                marker: {
+                  enabled: true,
+                },
+              });
+            },
+            mouseOut: function (e: any) {
+              e.target.update({
+                marker: {
+                  enabled: false,
+                },
+              });
+            },
+          },
           lineWidth: 1,
           states: {
             inactive: {
@@ -42,55 +62,95 @@ export class Chartmp3Component implements OnInit {
           enabled: false,
         },
       },
+      // xAxis: {
+      //   categories: [
+      //     '14:00',
+      //     '15:00',
+      //     '16:00',
+      //     '17:00',
+      //     '18:00',
+      //     '19:00',
+      //     '20:00',
+      //     '21:00',
+      //     '22:00',
+      //     '23:00',
+      //     '00:00',
+      //     '01:00',
+      //     '02:00',
+      //     '03:00',
+      //     '04:00',
+      //     '05:00',
+      //     '06:00',
+      //     '07:00',
+      //     '08:00',
+      //     '09:00',
+      //     '10:00',
+      //     '11:00',
+      //     '12:00',
+      //   ],
+      // },
+      xAxis: [
+        {
+          categories: [
+            '14:00',
+            '15:00',
+            '16:00',
+            '17:00',
+            '18:00',
+            '19:00',
+            '20:00',
+            '21:00',
+            '22:00',
+            '23:00',
+            '00:00',
+            '01:00',
+            '02:00',
+            '03:00',
+            '04:00',
+            '05:00',
+            '06:00',
+            '07:00',
+            '08:00',
+            '09:00',
+            '10:00',
+            '11:00',
+            '12:00',
+          ],
+          crosshair: {
+            width: 1,
+            color: '#7cb5ec',
+          },
+        },
+        {
+          linkedTo: 0,
+          crosshair: {
+            width: 1,
+            color: 'red',
+          },
+          visible: false,
+        },
+        {
+          linkedTo: 1,
+          crosshair: {
+            width: 1,
+            color: 'black',
+          },
+          visible: false,
+        },
+      ],
 
-      xAxis: {
-        categories: [
-          '14:00',
-          '15:00',
-          '16:00',
-          '17:00',
-          '18:00',
-          '19:00',
-          '20:00',
-          '21:00',
-          '22:00',
-          '23:00',
-          '00:00',
-          '01:00',
-          '02:00',
-          '03:00',
-          '04:00',
-          '05:00',
-          '06:00',
-          '07:00',
-          '08:00',
-          '09:00',
-          '10:00',
-          '11:00',
-          '12:00',
-        ],
-      },
-
-      // plotOptions: {},
       legend: {
         enabled: false,
       },
 
       tooltip: {
         useHTML: true,
-        crosshairs: {
-          width: 1,
-          color: 'red',
-        },
         headerFormat: '<table>',
         pointFormat:
-          '<tr><td>{point.key}</td>' +
+          '<tr><td><img src="{series.options.custom.img}" title="" alt="" border="0" height="35" width="35"></td>' +
           '<td style="color: {series.color}">{series.name} </td>' +
           '<td style="text-align: right"><b>{point.y}</b></td></tr>',
         footerFormat: '</table>',
-        // formatter: function () {
-        //   return '<img src="/./assets/img/anh2.jpg" title="" alt="" border="0" height="25" width="25">';
-        // },
       },
 
       series: [
@@ -101,6 +161,11 @@ export class Chartmp3Component implements OnInit {
             119931, 137133, 154175, 43934, 52503, 57177, 69658, 97031, 119931,
             137133, 154175, 97031, 119931, 137133,
           ],
+
+          xAxis: 0,
+          custom: {
+            img: '/./assets/img/anh2.jpg',
+          },
         },
         {
           name: 'Manufacturing',
@@ -116,6 +181,10 @@ export class Chartmp3Component implements OnInit {
             width: 16,
             height: 16,
           },
+          custom: {
+            img: '/./assets/img/anh3.jpg',
+          },
+          xAxis: 1,
         },
         {
           name: 'Sales & Distribution',
@@ -124,13 +193,17 @@ export class Chartmp3Component implements OnInit {
             19771, 20185, 24377, 11744, 17722, 16005, 19771, 20185, 24377,
             32147, 39387, 16005, 19771, 20185,
           ],
+          color:'black',
           marker: {
             symbol: 'none',
             lineColor: 'none',
             width: 16,
             height: 16,
-            // enabled: false,
           },
+          custom: {
+            img: '/./assets/img/anh4.jpg',
+          },
+          xAxis: 2,
         },
       ],
     };
