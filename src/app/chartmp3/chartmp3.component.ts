@@ -15,7 +15,7 @@ export class Chartmp3Component implements OnInit {
       chart: {
         type: 'spline',
         backgroundColor:'none',
-        plotBackgroundImage: 'linear-gradient(180deg,#740091,#2d1a4c);',
+        // plotBackgroundImage: 'linear-gradient(180deg,#740091,#2d1a4c);',
       },
       title: {
         text: '',
@@ -45,7 +45,7 @@ export class Chartmp3Component implements OnInit {
               });
             },
           },
-          lineWidth: 1,
+          lineWidth: 2,
           states: {
             inactive: {
               enabled: false,

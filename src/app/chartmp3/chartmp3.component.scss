@@ -64,6 +64,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 32px;
+  color: rgba(74,144,226,0);
+  font-weight: 900;
+  font-family: "Roboto",sans-serif;
+}
+.number-one{
+   -webkit-text-stroke: 1px #4a90e2;
+}
+.number-two{
+  -webkit-text-stroke: 1px #50e3c2;
+}
+.number-three{
+  -webkit-text-stroke: 1px #e35050;
 }
 .media-img {
   position: relative;
